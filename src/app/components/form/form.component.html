@@ -1,1 +1,6 @@
 <p>Form Component</p>
+<input type="text" [(ngModel)]="username" />
+<p>{{ username }}</p>
+<button (click)="writeToConsole()">Konsol'a Yaz</button>
+<button (click)="changeFromTs()">Değiştir</button>
+<!-- Two Way Data Binding -->
