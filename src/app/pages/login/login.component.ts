@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TodoService } from '../../services/todo.service';
 
 @Component({
   standalone: true,
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   today: Date = new Date();
+  constructor(private todoService: TodoService) {}
+  ngOnInit(): void {
+    this.todoService
+      .getAll()
+      .subscribe({ next: (value) => console.log(value) });
+  }
 }

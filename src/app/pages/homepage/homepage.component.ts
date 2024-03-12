@@ -1,5 +1,4 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ToDo } from '../../models/toDo';
 import { FilterTodolistPipe } from '../../pipes/filter-todolist.pipe';
@@ -8,7 +7,7 @@ import { TodoService } from '../../services/todo.service';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, HttpClientModule, FilterTodolistPipe, FormsModule],
+  imports: [CommonModule, FilterTodolistPipe, FormsModule],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.scss',
 })
