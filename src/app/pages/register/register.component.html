@@ -4,6 +4,12 @@
     <div class="mb-3">
       <label class="form-label">E-posta Adresi</label>
       <input formControlName="email" type="email" class="form-control" />
+      <small *ngIf="hasError('required', 'email')" class="text-danger"
+        >E-posta adresi zorunludur</small
+      >
+      <small *ngIf="hasError('email', 'email')" class="text-danger"
+        >E-posta adresi düzgün girilmedi.</small
+      >
     </div>
     <div class="mb-3">
       <label class="form-label">Şifre</label>
