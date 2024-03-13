@@ -9,6 +9,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { BaseInputErrorsComponent } from '../../components/base-input-errors/base-input-errors.component';
 
 @Component({
   standalone: true,
@@ -30,11 +31,11 @@ export class RegisterComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [
         Validators.required,
-        Validators.minLength(7),
+        Validators.minLength(5),
       ]),
       passwordConfirm: new FormControl('', [
         Validators.required,
-        Validators.minLength(7),
+        Validators.minLength(5),
       ]),
     });
   }
@@ -43,12 +44,5 @@ export class RegisterComponent implements OnInit {
     if (this.registerForm.valid) {
       console.log(this.registerForm.value);
     }
-  }
-
-  hasError(errorCode: string, field: string) {
-    return (
-      (this.registerForm.dirty || this.registerForm.get(field)?.touched) &&
-      this.registerForm.get(field)?.hasError(errorCode)
-    );
   }
 }

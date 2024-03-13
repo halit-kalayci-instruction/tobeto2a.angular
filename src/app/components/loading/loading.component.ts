@@ -14,6 +14,6 @@ export class LoadingComponent {
 
   //getter-setter
   get loadingStatus() {
-    return this.loadingService.isLoading;
+    return this.loadingService.requestCount > 0;
   }
 }

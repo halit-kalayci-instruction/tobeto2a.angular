@@ -1,0 +1,10 @@
+<small *ngIf="hasError('required')" class="text-danger"
+  >*Bu alan zorunludur</small
+>
+<small *ngIf="hasError('email')" class="text-danger"
+  >*E-posta adresi düzgün girilmedi.</small
+>
+<small *ngIf="hasError('minlength')" class="text-danger"
+  >*Bu alan en az {{ getError("minlength").requiredLength }} karakter
+  uzunluğunda olmalıdır.
+</small>

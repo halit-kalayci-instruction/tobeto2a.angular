@@ -1,2 +1,10 @@
-<label [for]="labelId" class="form-label">{{ label }}</label>
-<input [type]="inputType" class="form-control" [id]="labelId" />
+<div [formGroup]="form">
+  <label [for]="labelId" class="form-label">{{ label }}</label>
+  <input
+    [formControlName]="controlName"
+    [type]="inputType"
+    class="form-control"
+    [id]="labelId"
+  />
+  <myinput-errors [fieldName]="controlName" />
+</div>

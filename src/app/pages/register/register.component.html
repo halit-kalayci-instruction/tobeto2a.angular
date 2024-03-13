@@ -2,27 +2,35 @@
   <h3>Kayıt Ol</h3>
   <form [formGroup]="registerForm" (submit)="submit()">
     <div class="mb-3">
-      <label class="form-label">E-posta Adresi</label>
-      <input formControlName="email" type="email" class="form-control" />
-      <small *ngIf="hasError('required', 'email')" class="text-danger"
-        >E-posta adresi zorunludur</small
-      >
-      <small *ngIf="hasError('email', 'email')" class="text-danger"
-        >E-posta adresi düzgün girilmedi.</small
-      >
-    </div>
-    <div class="mb-3">
-      <label class="form-label">Şifre</label>
-      <input formControlName="password" type="password" class="form-control" />
-    </div>
-    <div class="mb-3">
-      <label class="form-label">Şifre Tekrarı</label>
-      <input
-        formControlName="passwordConfirm"
-        type="password"
-        class="form-control"
+      <myinput
+        labelId="email"
+        label="E-posta Adresi"
+        inputType="email"
+        controlName="email"
       />
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="mb-3">
+      <myinput
+        labelId="password"
+        label="Şifre"
+        inputType="password"
+        controlName="password"
+      />
+    </div>
+    <div class="mb-3">
+      <myinput
+        labelId="passwordConfirm"
+        label="Şifre Tekrar"
+        inputType="password"
+        controlName="passwordConfirm"
+      />
+    </div>
+    <button
+      [disabled]="!registerForm.valid"
+      type="submit"
+      class="btn btn-primary"
+    >
+      Submit
+    </button>
   </form>
 </div>
