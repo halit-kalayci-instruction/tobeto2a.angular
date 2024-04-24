@@ -34,3 +34,4 @@ export class BaseInputComponent {
   }
 }
 // Feature-Based Architecture
+// Feature-Oriented Architecture
