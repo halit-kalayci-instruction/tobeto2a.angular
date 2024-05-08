@@ -5,6 +5,12 @@
   <p>{{ today | date : "dd-MM-yyyy hh:mm" }}</p>
   <p>{{ 300 | currency : "₺" }}</p>
 
+  <p>{{ "hello" | translate }}</p>
+
+  <select [(ngModel)]="selectedLng" (ngModelChange)="changeLanguage()">
+    <option value="tr">TR</option>
+    <option value="en">EN</option>
+  </select>
   <!-- Directive -->
   <input class="form-control" placeholder="Search" [(ngModel)]="searchKey" />
   <ul *ngIf="todoList.length > 0">
